@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Employee{
+            #id;
+            #tel;
+            #sal;
+            constructor(fname,idno,telephone,address,salary){
+                this.name=fname;
+                this.#id=idno;
+                this.#tel=telephone;
+                this.addrs=address;
+                this.#sal=salary;
+            }
+            get id_emp(){
+                return this.#id;
+            }
+            set id_emp(telephone_num){
+                this.#tel=telephone_num
+            }  
+            get tel_emp(){
+                return this.#tel;
+            }
+            set tel_emp(phone){
+                this.#tel=phone;
+            }
+            get sal_emp(){
+                return this.#sal;
+            }
+            set sal_emp(phone){
+                this.#sal=phone;
+            }
+            emp_data(){
+                console.log(`the employee ${this.name} live in ${this.addrs}`)
+            }
+            }
+        class Manager extends Employee{
+            constructor(fname,idno,telephone,address,salary,group,project,target){
+                super(fname,idno,telephone,address,salary);
+                this.grp=group;
+                this.prj=project;
+                this.tar=target;
+            }
+            emp_data(){
+                console.log(`the manager works with group ${this.grp}`)
+            }
+        }
+        class Developer extends Employee{
+            constructor(fname,idno,telephone,address,salary,project,target){
+                super(fname,idno,telephone,address,salary)
+                this.prj=project;
+                this.tar=target;
+            }
+            emp_data(){
+                console.log(`the developer has target of ${this.tar}`)
+            }
+        }
+        class Intern extends Employee{
+            constructor(fname,idno,telephone,address,salary,hours,grade){
+                super(fname,idno,telephone,address,salary)
+                this.hours=hours;
+                this.grade=grade;
+            }
+            emp_data(){
+                console.log(`the intern ${this.name} have ${this.hours} hours`)
+                // return Intern.name;
+            }
+        }
+
+    </script>
+</body>
+</html>
