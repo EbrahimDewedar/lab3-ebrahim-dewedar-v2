@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3</title>
+</head>
+<body>
+    <script>
+        const schema = {
+        name: "string",
+        age: "number",
+        isStudent: "boolean",
+        address: {
+            city: "string",
+            zip: "number",
+        },
+        };
+        const object = {
+        name: "John",
+        age: 25,
+        isStudent: true,
+        address: {
+            city: "New York",
+            zip: 10001,
+        },
+        }
+
+        function validateObject(obj,sch){
+            if (typeof obj.name === sch.name && 
+                typeof obj.age === sch.age &&
+                typeof obj.isStudent===sch.isStudent &&
+                typeof obj.address.city=== sch.address.city &&
+                typeof obj.address.zip=== sch.address.zip
+            )
+                return true;
+            else
+                return false;
+        }
+
+    </script>
+</body>
+</html>
